@@ -32,7 +32,7 @@ public class LotteryMatcher {
         } else if (area1Matches == 1 && area2Matched) {
             return "普獎 $100";
         } else {
-            return "未中獎";
+           return "未中獎";  //哈哈哈
         }
     }
 }
