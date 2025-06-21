@@ -8,7 +8,9 @@ public class LotteryMatcher {
     public static String checkPrize(LotteryTicket ticket, DrawResult result) {
         Set<Integer> matchedArea1 = new HashSet<>(ticket.getArea1Numbers());
         matchedArea1.retainAll(result.getWinningArea1Numbers());
-        int area1Matches = matchedArea1.size();
+        int area1Matches = matchedArea1.size(); //Area1 中有
+
+        // ? 個號碼與中獎號碼匹配。
         boolean area2Matched = (ticket.getArea2Number() == result.getWinningArea2Number());
 
         if (area1Matches == 6 && area2Matched) {
@@ -32,7 +34,7 @@ public class LotteryMatcher {
         } else if (area1Matches == 1 && area2Matched) {
             return "普獎 $100";
         } else {
-           return "未中獎";  //哈哈哈
+           return "未中獎";
         }
     }
 }
